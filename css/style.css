@@ -1,0 +1,785 @@
+/* Css Reset可以清空一切初始格式 */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*,*:before,*:after{  /* 讓全部的標籤不會因為padding、margin、border的寬、高所影響 */
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+a{
+    text-decoration: none;
+}
+
+
+
+/* Layout */
+/* 首頁大外框 */
+.wrap{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+/* 首頁表頭 */
+.header{
+    background-image: url(../images/header_desktop.png);
+    height: 420px; 
+    position: relative;
+}
+/* 首頁表頭-菜單 */
+.header-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: -webkit-linear-gradient(left,rgb(0, 0, 0),rgba(0, 0, 0, 0.7));
+    padding-left: 10px;
+    padding-right: 10px;    
+}
+.logo{
+    display: block;
+    background-image: url(../images/logo_w@svg.svg);
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 120px;
+    height: 24px;
+}
+.header-menu .menu{
+    display: flex;
+}
+.header-menu .menu a{
+    display: block;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    text-align: center;
+    line-height: 60px;
+}
+.header-menu .menu a:hover{
+    background-color: rgb(179, 177, 177);
+}
+/* 首頁表頭-廣告 */
+.banner{
+    max-width: 460px;
+    height: 130px;
+    background: -webkit-linear-gradient(left,rgba(0, 0, 0,0.3),rgba(0, 0, 0, 0.3));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 20px;
+}
+.banner h3{
+    color: #fff;
+    font-size: 30px;
+    text-align: center;  
+    margin-bottom: 20px;  
+}
+.banner p{
+    color: #fff;
+    text-align: center;    
+}
+/* 手機 */
+@media screen and (max-width:414px) {
+    .header{
+        background-image: none;
+        height: auto;
+    }
+    .banner{
+        display: none;
+    }
+    .header-menu{
+        background: #3d1101;
+    }
+}
+
+
+
+/* Layout */
+/* 首頁頁尾 */
+.footer{
+    background-color: rgb(219, 215, 215);    
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;    
+    align-items: center;
+}
+/*  店家歷史 */
+.history{
+    width: 30%;
+}
+.history > h3{
+    color: #3d1101;
+    font-size: 24px;
+}
+.history > p{
+    color: #3d1101;
+    font-size: 16px;
+    margin-top: 20px;
+}
+/* 手機 */
+@media screen and (max-width:414px) {
+    .history{
+        display: none;
+    }
+}
+/* 店家聯絡資訊 */
+.store-phone{
+    width: 30%;
+}
+.store-phone > h3{
+    font-size: 24px;
+    color: #3d1101;
+}
+.store-phone ul{
+    margin-top: 20px;
+} 
+.store-phone ul > li{
+    list-style-type: disc;
+    list-style-position: inside;
+    color: #3d1101;
+    font-size: 16px;    
+}
+/* 手機 */
+@media screen and (max-width:414px) {
+    .store-phone{
+        width: 60%;
+    }
+}
+/* 店家副logo */
+.store{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.store > img{
+    width: 243px;
+    height: 48px;
+}
+.news{
+    margin-top: 10px;
+    display: flex;
+}
+.news a{
+    width: 25px;
+    height: 30px;
+    display: block;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+.news .google{
+    background-image: url(../images/google.png);
+}
+.news .twitter{
+    background-image: url(../images/twitter.png);
+}
+.news .fb{
+    background-image: url(../images/fb.png);
+}
+
+
+/* 首頁內容區 */
+/* 飯店要求 */
+.content{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.title1,.title2{
+    font-size: 20px;
+    color: #3d1101;
+    text-align: center;
+    line-height: 1.5;
+}
+.title1{
+    border-bottom: 1px solid #3d1101;       
+}
+.product-description{
+    display: flex;
+    margin-top: 20px;
+}
+.product-description li{
+    width: 40%;    
+    text-align: center;
+    color: #3d1101;    
+}
+.product-description li > h3{
+    font-size: 18px;    
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.product-description li > p{
+    font-size: 16px;
+}
+/* 平板 */
+@media screen and (max-width:768px) {
+    .title1,.title2{
+        display: none;
+    }
+    .product-description{
+        display: none;
+    }    
+}
+/* 手機 */
+@media screen and (max-width:414px) {
+    .title1,.title2{
+        display: block;
+    }
+    .product-description{
+        display: block;
+    } 
+    .product-description li{
+        width: 80%;
+        margin-left: 39px;
+        margin-right: 39px;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* 主廚經歷區 */
+.chef{
+    background-color: #3d1101;
+    width: 100%;  
+    height: 460px;  
+    padding-left: 20px;
+    margin-top: 20px;
+}
+.chef > img{
+    float: left;
+    clear: both;
+}
+.detail{
+    padding: 100px 50px 20px 0px;
+    margin-left: 500px;
+}
+.detail > h3{
+    color: #fff;
+    font-size: 20px;    
+}
+.detail > p{
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+/* 平板 */
+@media screen and (max-width:768px) {
+    .chef{
+        display: none;
+    }
+}
+
+
+/* 客人回饋區 */
+.opinion{
+    margin-top: 20px;
+}
+.opinion > h3{
+    text-align: center;
+    font-size: 24px;
+    color: #3d1101;
+}
+.message{
+    display: flex;
+    margin-top: 20px;
+}
+.message > li{
+    width: 40%;
+    display: flex;
+}
+.message-img{
+    width: 50%;
+}
+.message-detail{
+    line-height: 1.5;
+}
+.message-detail > h3{
+    font-size: 18px;
+    color: #3d1101;
+    margin-top: 20px;
+}
+.message-detail > p{
+    font-size: 16px;
+    color: #3d1101;
+    margin-top: 20px;
+}
+.p1{
+    font-size: 16px;
+    color: #3d1101;
+    text-align: right;
+    margin-top: 20px;
+}
+/* 手機 */
+@media screen and (max-width:414px) {
+    .message{
+        display: block;
+    }
+    .message > li{
+        width: 80%;
+        margin-left: 39px;
+        margin-right: 39px;
+        border-top: 1px solid #3d1101;
+        border-bottom: 1px solid #3d1101;
+        display: block;
+    }
+}
+
+
+/* 店家位置圖 */
+.map{
+    margin-top: 20px;
+}
+.map > h3{
+    color: #3d1101;
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.5;
+}
+.map-title{
+    margin-top: 20px;
+    display: flex;
+}
+.map-data{
+    margin-left: 20px;
+    color: #3d1101;
+}
+.map-data > label,.map-data > input{
+    display: block;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.name,.phone,.mail{
+    width: 460px;
+}
+.map-data .vegetarian-food{
+    display: inline;
+}
+.but{
+    display: flex;
+    justify-content: right;
+}
+.but input{
+    margin-left: 20px;
+    border-radius: 1px;
+}
+.puton{
+    background-color: rgb(255, 94, 0);
+    border: 1px solid rgb(255, 94, 0);
+    width: 70px;
+}
+.puton:hover{
+    background-color: #fff;
+}
+.close{
+    background-color: #8b8b8b;
+    border: 1px solid #8b8b8b;
+    width: 70px;
+}
+.close:hover{
+    background-color: #fff;
+}
+/* 平板 */
+@media screen and (max-width:768px) {
+    .map-title{
+        display: block;  
+        position: relative;      
+    }
+    .map-title img{
+        margin-left: 153px;
+        margin-right: 153px;
+    }
+    .map-data{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 20px;        
+        border: 1px solid #3d1101;
+        border-top: 5px solid #FF5E45;
+        padding: 20px;
+    }
+    .map-data label,.map-data input{
+        font-size: 24px;
+    }
+}
+/* 手機 */
+@media screen and (max-width:414px) {
+    .map-title img{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .map-data > label{
+        font-size: 16px;
+    }
+    .map-data > input{
+        width: 300px;
+    }
+}
+
+
+/* 分頁-購物車內容區 */
+/* 購物車菜單 */
+.content-shopping{
+    padding: 20px;    
+    background-color: #efe9e7;
+    display: flex;
+}
+.shoppingcar-wrap{
+    width: 20%;
+}
+.shoppingcar-wrap .head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.head > h3{
+    color: #3d1101;
+    font-size: 20px;
+}
+.shoppingcar-menu li a{
+    display: block;
+    color: #3d1101;
+    font-size: 16px;
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+.shoppingcar-menu li a:hover{
+    background-color: #3d1101;
+    color: #fff;
+}
+/* 平板 */
+@media screen and (max-width:768px) {
+    .shoppingcar-wrap .head{
+        display: none;
+    }
+}
+/* 手機 */
+@media screen and (max-width:414px) {
+    .content-shopping{
+        position: relative;  
+        padding: 0;      
+    }
+    .content-shopping{
+        display: block;
+    }
+    .shoppingcar-wrap{
+        width: 100%;
+        padding-top: 70px;
+    }
+    .shoppingcar-wrap .head{
+        display: flex;
+    }
+    .shoppingcar-menu{
+        display: flex;
+        overflow-x: auto;
+        width: 390px;
+    }
+    .shoppingcar-menu li a{
+        width: 150px;
+        border: none;
+        text-align: center;
+    }
+}
+
+
+/* 購物內容與搜尋區 */
+/* 搜尋區 */
+.shoppingcar-title{
+    width: 80%;
+    margin-left: 20px;
+}
+.search{
+    display: flex;
+}
+.shoppingcar-data input{
+    width: 430px;
+    height: 30px;
+}
+.search > a{
+    display: block;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-image: url(../images/search.png);
+}
+.shoppingcar-search{
+    display: flex;
+    justify-content: space-between;
+}
+.buy{
+    height: 30px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text{
+    color: #3d1101;
+    padding-right: 10px;
+    border-right: 1px solid #3d1101;
+}
+.buy-img a{
+    height: 30px;
+    margin-left: 10px;
+    display: block;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-image: url(../images/checkout.png);
+    background-repeat: no-repeat;
+}
+/* 平板 */
+@media screen and (max-width:768px){
+    .buy .text{
+        display: none;
+    }
+}
+/* 手機 */
+@media screen and (max-width:414px) {
+    .shoppingcar-title{
+        width: 100%;
+        margin-left: 0;
+    }
+    .shoppingcar-data input{
+        margin-left: 10px;
+        width: 290px;
+        height: 30px;
+    }
+    .shoppingcar-search{
+        position: absolute;
+        top: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+/* 購物內容區 */
+.food{
+    margin-top: 20px;
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.food > li{
+    width: 30.33333%;
+    box-shadow: 5px 5px 10px rgb(163, 161, 161);
+    margin: 10px;
+}
+.food-head{
+    position: relative;
+}
+.hotfood{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    width: 70px;
+    text-align: center;
+    color: #fff;
+    border-radius: 20px;
+}
+.food-head a{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-image: url(../images/lovefood.png);
+    background-repeat: no-repeat;
+}
+.food-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;    
+    text-align: center;
+    color: #3d1101;
+    font-size: 20px; 
+    padding: 10px;      
+}
+.food-title > h2{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #3d1101;
+    font-size: 12px;
+    padding-bottom: 20px;
+}
+.food-title > p{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.food-title > a{
+    display: block;
+    width: 200px;
+    height: 28px;
+    border: 1px solid #FF5E45;
+    color: #FF5E45;
+    line-height: 28px;
+}
+.food-title > a:hover{
+    background-color: #FF5E45;
+    color: #fff;
+}
+/* 平板 */
+@media screen and (max-width:768px){
+    .food > li{
+        width: 46%;
+    }
+}
+/* 手機 */
+@media screen and (max-width:414px) {
+    .food{
+        display: block;
+        flex-wrap: nowrap;
+    }
+    .food > li{
+        width: 85%;
+        box-shadow: none;
+        border: 1px solid #3d1101;
+        margin: 0;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* 分頁-登入內容區 */
+.content-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.5;
+    background-color: #efe9e7;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.content-login > h3{
+    color: #3d1101;
+    font-size: 20px;
+    font-weight: bold;
+}
+.login{
+    margin-top: 20px;
+    border-top: 5px solid #FF5E45;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgb(189, 186, 186);
+}
+.login > h3{
+    color: #3d1101;
+    font-weight: bold;
+    font-size: 18px;
+}
+.e-mail{
+    margin-top: 20px;
+}
+.e-mail label,.e-mail input{
+    display: block;
+    text-align: left;
+}
+.password{
+    margin-top: 20px;
+}
+.password label,.password input{
+    display: block;
+    text-align: left;
+}
+.password label,.e-mail label{
+    font-size: 16px;
+    color: #3d1101;
+}
+.password input,.e-mail input{
+    width: 270px;
+    height: 32px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+}
+.password a{
+    display: block;
+    font-size: 14px;
+    color: #FF5E45;
+    text-align: left;
+}
+.register,.getin{
+    width: 125px;
+    height: 32px;
+    border-radius: 5px;
+}
+.register{
+    background-color: #707070;
+    color: #fff;
+    border: 1px solid #707070;
+    margin-top: 20px;
+}
+.register:hover,.getin:hover{
+    background-color: #fff;
+    color: black;
+}
+.getin{
+    background-color: #FF5E45;
+    color: #fff;
+    border: 1px solid #FF5E45;
+}
+/* 手機 */
+@media screen and (max-width:414px) {
+    .content-login{
+        padding-top: 130px;
+        padding-bottom: 130px;
+    }
+}

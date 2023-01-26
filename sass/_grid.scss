@@ -1,0 +1,12 @@
+//各斷點
+@mixin pad {
+    @media screen and (max-width:768px) {
+        @content
+    }
+}
+
+@mixin iphone {
+    @media screen and (max-width:414px) {
+        @content
+    }
+}

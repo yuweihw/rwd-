@@ -1,0 +1,10 @@
+@mixin hide-text{  //圖片取代文字
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+@mixin li {  //項目符號
+    list-style-type: disc;
+    list-style-position: inside;
+}
+

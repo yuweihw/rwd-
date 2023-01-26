@@ -1,0 +1,226 @@
+
+// 首頁內容區 
+// 飯店要求 
+.content{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    .title1,.title2{
+        font-size: 20px;
+        color: $text-color-earth;
+        text-align: center;
+        line-height: 1.5;        
+    }
+    .title1{
+        border-bottom: 1px solid #3d1101; 
+    }
+    .product-description{
+        display: flex;
+        margin-top: 20px;
+        li{
+            width: 40%; 
+            text-align: center;
+            color: $text-color-earth;
+            h3{
+                font-size: 18px;    
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: 16px;
+            }     
+            img{
+                border-radius: 50%;
+            }      
+        }        
+    }
+    // 主廚經歷區 
+    .chef{
+        background-color: #3d1101;
+        width: 100%;  
+        height: 460px; 
+        padding-left: 20px;
+        margin-top: 20px;
+        img{
+            float: left;
+            clear: both;
+        }
+        .detail{
+            padding: 100px 50px 20px 0px;
+            margin-left: 500px;
+            h3{
+                color: $text-color-white;
+                font-size: 20px;
+            }
+            p{
+                color: $text-color-white;
+                font-size: 16px;
+                line-height: 1.5;
+                margin-top: 20px;
+            }
+        }        
+    }
+    // 客人回饋區 
+    .opinion{
+        margin-top: 20px;
+        h3{
+            text-align: center;
+            font-size: 24px;
+            color: $text-color-earth;
+        }
+        .message{
+            display: flex;
+            margin-top: 20px;
+            li{
+                width: 40%;
+                display: flex;
+                .message-img{
+                    width: 50%;
+                    img{
+                        border-radius: 50%;
+                    }
+                }
+                .message-detail{
+                    line-height: 1.5;
+                    h3{
+                        color: $text-color-earth;
+                        font-size: 18px;
+                        margin-top: 20px;
+                    }
+                    p{
+                        font-size: 16px;
+                        margin-top: 20px;
+                        color: $text-color-earth;
+                    }
+                    .p1{
+                        color: $text-color-earth;
+                        text-align: right;
+                        margin-top: 20px;
+                        font-size: 16px;
+                    }
+                }                
+            }            
+        }
+    }
+    // 店家位置圖 
+    .map{
+        margin-top: 20px;
+        h3{
+            color: $text-color-earth;
+            font-size: 24px;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .map-title{
+            margin-top: 20px;
+            display: flex; 
+            .map-data{
+                margin-left: 20px;
+                color: $text-color-earth;
+                > label,> input{
+                    display: block;
+                    margin-top: 20px;
+                    font-size: 16px;                                      
+                }
+                .name,.phone,.mail{
+                    width: 460px;
+                }
+                .vegetarian-food{
+                    display: inline;
+                }
+                .but{
+                    display: flex;
+                    justify-content: right;
+                    input{
+                        margin-left: 20px;
+                        border-radius: 1px;
+                    }
+                    .puton{
+                        background-color: rgb(255, 94, 0);
+                        border: 1px solid rgb(255, 94, 0);
+                        width: 70px;
+                        &:hover{
+                            background-color: #fff;
+                        }
+                    }
+                    .close{
+                        background-color: #8b8b8b;
+                        border: 1px solid #8b8b8b;
+                        width: 70px;
+                        &:hover{
+                            background-color: #fff;
+                        }
+                    }
+                }
+                
+            }
+            
+        }
+    }
+    //平板
+    @include pad(){
+        .title1,.title2{
+            display: none;
+        }
+        .product-description{
+            display: none;
+        }     
+        .chef{
+            display: none;
+        }    
+        .map .map-title{
+            display: block;  
+            position: relative;      
+        }
+        .map-title img{
+            margin-left: 153px;
+            margin-right: 153px;
+        }
+        .map-data{
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 20px;        
+            border: 1px solid #3d1101;
+            border-top: 5px solid #FF5E45;
+            padding: 20px;
+        }
+        .map .map-title .map-data label,.map .map-title .map-data input{
+            font-size: 24px;
+        }     
+    }
+    //手機
+    @include iphone(){
+        .title1,.title2{
+            display: block;
+        }
+        .product-description{
+            display: block;
+        } 
+        .product-description li{
+            width: 80%;
+            margin-left: 39px;
+            margin-right: 39px;
+            margin-bottom: 20px;
+        }
+        .opinion .message{
+            display: block;
+        }
+        .opinion .message > li{
+            width: 80%;
+            margin-left: 39px;
+            margin-right: 39px;
+            border-top: 1px solid #3d1101;
+            border-bottom: 1px solid #3d1101;
+            display: block;
+        }
+        .map-title img{
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .map .map-title .map-data > label{
+            font-size: 16px;
+        }
+        .map .map-title .map-data .name,.map .map-title .map-data .phone,.map .map-title .map-data .mail{
+            width: 300px;
+        }        
+    }
+}

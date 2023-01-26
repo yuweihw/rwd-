@@ -1,0 +1,224 @@
+
+/* 分頁-購物車內容區 */
+/* 購物車菜單 */
+.content-shopping{
+    padding: 20px;    
+    background-color: #efe9e7;
+    display: flex;
+    
+    .shoppingcar-wrap{
+        width: 20%;
+        .head{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            h3{
+                color: $text-color-earth;
+                font-size: 20px;
+            }
+        }
+        .shoppingcar-menu{
+            li{
+                a{
+                    display: block;
+                    color:$text-color-earth;
+                    font-size: 16px;
+                    border-bottom: 1px solid black;
+                    padding: 10px;
+                    
+                    &:hover{
+                        background-color: #3d1101;
+                        color: $text-color-white;
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+    .shoppingcar-title{  
+        /* 購物內容與搜尋區 */
+        /* 搜尋區 */
+        width: 80%;
+        margin-left: 20px;
+        .shoppingcar-search{
+            display: flex;
+            justify-content: space-between;
+            
+            .search{
+                display: flex;
+                a{
+                    display: block;
+                    @include hide-text();
+                    background-image: url(../images/search.png);
+                }
+                .shoppingcar-data{
+                    input{                        
+                        width: 430px;
+                        height: 30px;
+                    }
+                }
+            }
+            .buy{
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .text{
+                    color: $text-color-earth;
+                    padding-right: 10px;
+                    border-right: 1px solid #3d1101;
+                    
+                }
+                .buy-img{
+                    a{
+                        height: 30px;
+                        margin-left: 10px;
+                        display: block;
+                        @include hide-text();
+                        background-image: url(../images/checkout.png);
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+        
+        
+        .food{  /* 購物內容區 */
+            margin-top: 20px;
+            display: flex;
+            padding: 20px;
+            flex-wrap: wrap;
+            li{
+                width: 30.33333%;
+                box-shadow: 5px 5px 10px rgb(163, 161, 161);
+                margin: 10px;
+                .food-head{
+                    position: relative;
+                    .hotfood{
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background-color: red;
+                        width: 70px;
+                        text-align: center;
+                        color: $text-color-white;
+                        border-radius: 20px;
+                    }
+                    a{
+                        position: absolute;
+                        top: 5px;
+                        left: 5px;
+                        display: block;
+                        width: 30px;
+                        height: 30px;
+                        @include hide-text();
+                        background-image: url(../images/lovefood.png);
+                        background-repeat: no-repeat;
+                    }
+                }
+                .food-title{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 20px;    
+                    text-align: center;
+                    color: $text-color-earth;
+                    font-size: 20px; 
+                    padding: 10px; 
+                    h2{
+                        margin-bottom: 20px;
+                        border-bottom: 1px solid #3d1101;
+                        font-size: 12px;
+                        padding-bottom: 20px;
+                    }
+                    p{
+                        font-weight: bold;
+                        margin-bottom: 10px;
+                    }
+                    a{
+                        display: block;
+                        width: 200px;
+                        height: 28px;                        
+                        border: 1px solid #FF5E45;
+                        color: $text-color-orange;
+                        line-height: 28px;
+                        &:hover{
+                            background-color: #FF5E45;
+                            color: $text-color-white;
+                        }
+                    }
+                }
+                
+            }
+            
+        }
+    }
+    
+    @include pad(){  
+        .shoppingcar-wrap .head{ /* 平板 */
+            display: none;
+        }
+        .buy .text{
+            display: none;
+        }
+        .shoppingcar-title .food li{
+            width: 46%;
+        }        
+    }
+    
+    @include iphone(){  /* 手機 */        
+        position: relative;  
+        padding: 0;              
+        display: block;        
+        .shoppingcar-wrap{
+            width: 100%;
+            padding-top: 70px;
+        }
+        .shoppingcar-wrap .head{
+            display: flex;
+        }
+        .shoppingcar-menu{
+            display: flex;
+            overflow-x: auto;
+            width: 390px;
+        }
+        .shoppingcar-wrap .shoppingcar-menu li a{
+            width: 150px;
+            border: none;
+            text-align: center;
+        }
+        .shoppingcar-title{
+            width: 100%;
+            margin-left: 0;
+        }
+        .shoppingcar-title .shoppingcar-search .search .shoppingcar-data input{
+            margin-left: 10px;
+            width: 290px;
+            height: 30px;            
+        }
+        .shoppingcar-title .shoppingcar-search{
+            position: absolute;
+            top: 0;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .shoppingcar-title .food{
+            display: block;
+            flex-wrap: nowrap;
+        }
+        .shoppingcar-title .food > li{
+            width: 85%;
+            box-shadow: none;
+            border: 1px solid #3d1101;
+            margin: 0;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-bottom: 10px;
+        }        
+    }
+}
+

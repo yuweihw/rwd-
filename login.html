@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="響應式網站新手製作">
+    <meta name="keywords" content="新手,RWD,最終作業">
+    <meta property="og:title" content="六角西餐廳-最終作業for(RWD)">
+    <meta property="og:description" content="六角西餐廳-最終作業for(RWD)呈現">
+    <meta property="og:type" content="website">
+    <title>六角西餐廳</title>
+    <!-- font-awesome的小圖示網站 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/style1.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="header-menu">
+                <a href="index.html" class="logo" alt="logo圖" title="logo圖">logo圖</a>
+                <!-- 菜單 -->
+                <ul class="menu">
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="cartdestop.html">菜單</a></li>
+                    <li><a href="login.html">登入</a></li>
+                </ul>
+            </div>
+            <!-- 廣告 -->
+            <div class="banner">
+                <h3>咬一口就無法忘懷的漢堡</h3>
+                <p>七夕絕對無法錯過的好滋味<br/><span class="fa-solid fa-utensils">六角大漢堡 <span class="fa-solid fa-utensils"></span></span></p>                
+            </div>            
+        </div>
+        <div class="content-login">
+            <!-- 登入內容區 -->
+            <img src="./images/logo_l(null).svg" alt="餐廳圖示">
+            <h3>享受美食好味道</h3>
+            <div class="login">
+                <h3>LOGIN</h3>
+                <form action="index.html">
+                    <div class="e-mail">
+                        <label for="e-mail">Email Address*</label>
+                        <input type="email" name="電子郵件" id="電子郵件" placeholder="請輸入電子郵件" multiple required>
+                    </div>
+                    <div class="password">
+                        <label for="password">Password*</label>                        
+                        <input type="password" name="密碼" id="密碼" placeholder="請輸入密碼" required>
+                        <a href="#">忘記密碼?</a>
+                    </div>
+                    <input type="submit" value="註冊" class="register">
+                    <input type="submit" value="登入" class="getin">
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <!-- 店家歷史 -->
+            <div class="history">
+                <h3>關於六角西餐廳</h3>
+                <p>Curabitur lobortis id lorem id bibndum. Ut id consectetur magna. Quisque volutpat augue enim, pulvinar lobortis nibh lacinia at. </p>
+            </div>
+            <!-- 店家聯絡資訊 -->
+            <div class="store-phone">
+                <h3>聯絡方式</h3>
+                <ul>
+                    <li>高雄市中正五路到底</li>
+                    <li>+886 886 886</li>
+                    <li>service@hexschool.com</li>
+                </ul>
+            </div>
+            <!-- 店家副logo -->
+            <div class="store">
+                <img class="logo2" src="./images/logo_l(null).svg" alt="副logo圖">
+                <ul class="news">
+                    <li><a class="google" href="#">google</a></li>
+                    <li><a class="twitter" href="#">twitter</a></li>
+                    <li><a class="fb" href="#">facebook</a></li>
+                </ul>                                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+
+/* 分頁-登入內容區 */
+.content-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.5;
+    background-color: #efe9e7;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    h3{
+        color: $text-color-earth;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .login{
+        margin-top: 20px;
+        border-top: 5px solid #FF5E45;
+        width: 300px;
+        padding: 20px;
+        box-shadow: 5px 5px 10px rgb(189, 186, 186);
+        h3{
+            color: $text-color-earth;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .e-mail{
+            margin-top: 20px;
+            label,input{
+                display: block;
+                text-align: left;
+            }
+            label{
+                font-size: 16px;
+                color: $text-color-earth;
+            }
+            input{
+                width: 270px;
+                height: 32px;                
+                border-radius: 5px;
+                border: 1px solid #fff;
+            }
+        }
+        .password{
+            margin-top: 20px;
+            label,input{
+                display: block;
+                text-align: left;
+            }
+            label{
+                font-size: 16px;
+                color: $text-color-earth;
+            }
+            input{
+                width: 270px;
+                height: 32px; 
+                border-radius: 5px;
+                border: 1px solid #fff;
+            }
+            a{
+                display: block;
+                font-size: 14px;
+                color: $text-color-orange;
+                text-align: left;
+            }
+        }
+        .register,.getin{
+            border-radius: 5px;
+            width: 125px;
+            height: 32px;            
+        }
+        .register{
+            background-color: #707070;
+            color: $text-color-white;
+            border: 1px solid #707070;
+            margin-top: 20px;
+            &:hover{
+                background-color: #fff;
+                color: $text-color-black;
+            }
+        }
+        .getin{
+            background-color: #FF5E45;
+            color: $text-color-white;
+            border: 1px solid #FF5E45;
+            &:hover{
+                background-color: #fff;
+                color: $text-color-black;
+            }
+        }
+    }
+    
+    @include iphone(){  /* 手機 */
+        padding-top: 130px;
+        padding-bottom: 130px;
+    }
+}

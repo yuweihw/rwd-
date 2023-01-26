@@ -1,0 +1,160 @@
+
+// Layout 
+// 首頁大外框 
+.wrap{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+// 首頁表頭 
+.header{
+    background-image: url(../images/header_desktop.png);
+    height: 420px;
+    position: relative;
+    //首頁表頭-菜單
+    .header-menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: -webkit-linear-gradient(left,rgb(0, 0, 0),rgba(0, 0, 0, 0.7));
+        padding-left: 10px;
+        padding-right: 10px;
+        .logo{
+            display: block;
+            background-image: url(../images/logo_w@svg.svg);
+            background-repeat: no-repeat;
+            @include hide-text();
+            width: 120px;
+            height: 24px;            
+        }
+        .menu{
+            display: flex;
+            a{
+                display: block;
+                width: 60px;
+                height: 60px;
+                color: $text-color-white;
+                text-align: center;
+                line-height: 60px;
+                &:hover{
+                    background-color: rgb(179, 177, 177);
+                }
+            }
+        }        
+    }
+    //首頁表頭-廣告
+    .banner{
+        max-width: 460px;
+        height: 130px;
+        background: -webkit-linear-gradient(left,rgba(0, 0, 0,0.3),rgba(0, 0, 0, 0.3));
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        padding: 20px;
+        h3{
+            color: $text-color-white;
+            font-size: 30px;
+            text-align: center;  
+            margin-bottom: 20px;
+        }
+        p{
+            color: $text-color-white;
+            text-align: center; 
+        }
+    }   
+    // 手機  
+    @include iphone(){ 
+        background-image: none;
+        height: auto;
+        .banner{
+            display: none;
+        }
+        .header-menu{
+            background: #3d1101;
+        }
+    }
+}
+
+
+
+// Layout 
+// 首頁頁尾 
+.footer{
+    background-color: rgb(219, 215, 215);    
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;    
+    align-items: center;
+    //  店家歷史 
+    .history{
+        width: 30%;
+        h3{
+            color: $text-color-earth;
+            font-size: 24px;
+        }
+        p{
+            color: $text-color-earth;
+            font-size: 16px;
+            margin-top: 20px;
+        }        
+    }
+    // 店家聯絡資訊 
+    .store-phone{
+        width: 30%;
+        h3{
+            font-size: 24px;
+            color: $text-color-earth;
+        }
+        ul{
+            margin-top: 20px;
+            li{
+                @include li();
+                color: $text-color-earth;
+                font-size: 16px;
+            }
+        }        
+    }
+    // 店家副logo 
+    .store{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        img{
+            width: 243px;
+            height: 48px;
+        }
+        .news{
+            margin-top: 10px;
+            display: flex;
+            a{
+                width: 25px;
+                height: 30px;
+                @include hide-text();
+                margin-left: 10px;
+                display: block;
+            }
+            .google{
+                background-image: url(../images/google.png);
+            }
+            .twitter{
+                background-image: url(../images/twitter.png);
+            }
+            .fb{
+                background-image: url(../images/fb.png);
+            }
+        }
+    }
+    // 手機 
+    @include iphone(){
+        .history{
+            display: none;
+        }
+        .store-phone{
+            width: 60%;
+        }        
+    }
+}
